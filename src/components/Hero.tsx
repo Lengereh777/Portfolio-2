@@ -6,7 +6,6 @@ import '../styles/Hero.css';
 const Hero: React.FC = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const heroRef = useRef<HTMLDivElement>(null);
-  const particlesRef = useRef<HTMLDivElement>(null);
 
   const handleScrollToProjects = () => {
     const projectsSection = document.getElementById('projects');
