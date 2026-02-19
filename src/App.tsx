@@ -11,29 +11,28 @@ import { useScrollAnimation } from './hooks/useScrollAnimation';
 import './styles/global.css';
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  // Initialize dark mode from localStorage or system preference
+  const getInitialDarkMode = () => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode) {
+      return JSON.parse(savedDarkMode);
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+
+  const [darkMode, setDarkMode] = useState(getInitialDarkMode);
 
   // Initialize scroll animations
   useScrollAnimation();
 
-  // Load dark mode preference from localStorage on initial render
+  // Update body class when dark mode changes
   useEffect(() => {
-    const savedDarkMode = localStorage.getItem('darkMode');
-    if (savedDarkMode) {
-      const isDark = JSON.parse(savedDarkMode);
-      setDarkMode(isDark);
-      if (isDark) {
-        document.body.classList.add('dark-mode');
-      }
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
     } else {
-      // Check system preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setDarkMode(prefersDark);
-      if (prefersDark) {
-        document.body.classList.add('dark-mode');
-      }
+      document.body.classList.remove('dark-mode');
     }
-  }, []);
+  }, [darkMode]);
 
   // Toggle dark mode
   const toggleDarkMode = () => {

@@ -80,7 +80,7 @@ const About: React.FC = () => {
           <div className={`about-image fade-in-left ${isVisible ? 'visible' : ''}`} style={{ animationDelay: '0.2s' }}>
             <div className="about-avatar">
               <img
-                src="./assets/images/amanuel.jpg"
+                src="/profile.jpg"
                 alt="Amanuel Kebede - Full Stack Developer"
                 loading="lazy"
               />

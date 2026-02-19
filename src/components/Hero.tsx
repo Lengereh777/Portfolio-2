@@ -136,22 +136,22 @@ const Hero: React.FC = () => {
 
           {/* Floating tech badges */}
           <div className="floating-particles">
-            <div className="floating-particle floating-element" style={{ ['--delay' as any]: '0s' }}>
+            <div className="floating-particle floating-element" style={{ '--delay': '0s' } as React.CSSProperties}>
               <span>React</span>
             </div>
-            <div className="floating-particle floating-element" style={{ ['--delay' as any]: '0.5s' }}>
+            <div className="floating-particle floating-element" style={{ '--delay': '0.5s' } as React.CSSProperties}>
               <span>TypeScript</span>
             </div>
-            <div className="floating-particle floating-element" style={{ ['--delay' as any]: '1s' }}>
+            <div className="floating-particle floating-element" style={{ '--delay': '1s' } as React.CSSProperties}>
               <span>Node.js</span>
             </div>
-            <div className="floating-particle floating-element" style={{ ['--delay' as any]: '1.5s' }}>
+            <div className="floating-particle floating-element" style={{ '--delay': '1.5s' } as React.CSSProperties}>
               <span>UI/UX</span>
             </div>
-            <div className="floating-particle floating-element" style={{ ['--delay' as any]: '2s' }}>
+            <div className="floating-particle floating-element" style={{ '--delay': '2s' } as React.CSSProperties}>
               <span>Next.js</span>
             </div>
-            <div className="floating-particle floating-element" style={{ ['--delay' as any]: '2.5s' }}>
+            <div className="floating-particle floating-element" style={{ '--delay': '2.5s' } as React.CSSProperties}>
               <span>Tailwind</span>
             </div>
           </div>
